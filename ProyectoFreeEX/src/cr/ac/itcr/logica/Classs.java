@@ -1,8 +1,9 @@
 package cr.ac.itcr.logica;
 
 public class Classs {
-
-	public Classs() {
+private int  e;
+	public Classs(int init) {
+		e=init;
 		// TODO Auto-generated constructor stub
 	}
 
