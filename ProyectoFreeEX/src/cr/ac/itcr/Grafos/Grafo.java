@@ -20,7 +20,7 @@ public class Grafo {
 		private int nroAristas;
 		private int grafo[][];
 		
-		//Crea un grafo vacío, con un máximo numero de vertices y aristas
+		//Creaewewe un grafo vacío, con un máximo numero de vertices y aristas
 		public Grafo(int nroVertices, int  nroAristas){
 			MAX_VERTICES = nroVertices;
 			MAX_ARISTAS = nroAristas;
