@@ -1,3 +1,12 @@
+/*
+ * @author   by jonathan Garcia 
+ * 
+ * 
+ * Derechos:   se   analizó   un codigo de  un blog  de internet  para  basarse  en la creacion de codigo del  grafo.
+ *  ademas   se toman  como referencia el libro de joyanes  y   java2.
+ *  
+ * 
+ */
 package cr.ac.itcr.Grafos;
 
 import java.lang.ArrayIndexOutOfBoundsException;
@@ -8,12 +17,7 @@ import java.lang.RuntimeException;
 
 public class Grafo {
 
-	/*File: Grafo.java
-	 *Descripción: Grafo Dirigido implementado con matrices de adyacencia.
-	 *Las aristas no van a tener peso, por lo tanto la matriz es binaria, 
-	 *un valor de 1 indica que existe una arista entre dos vertices, y un valor
-	 *de cero indica que no existe una arista entre los vertices.*/
-
+	
 	
 		private final int MAX_VERTICES;
 		private final int MAX_ARISTAS;
@@ -36,32 +40,26 @@ public class Grafo {
 			}
 		}
 		
-		//Crea un grafo vacío, con un máximo número de vertices, y 
-		//vertices al cuadrado como número máximo de aristas.
 		public Grafo(int nroVertices){
-			//Llamada al constructor con dos argumentos
+		
+			
 			this(nroVertices, nroVertices);
 		}
 		
-		//Crea un grafo vacío con un máximo número de vertices = 5
-		//y máximo numero de aristas = 25.
-		public Grafo(){
-			//Llamada al constructor con dos argumentos
-			this(5,25);
-		}
+		
 
-		public int getMAX_VERTICES()
+		public int getNumberOfVertices ()
 		{
 			return MAX_VERTICES;
 		}
 
-		public int getMAX_ARISTAS()
+		public int getNumberOfAristas()
 		{
 			return MAX_ARISTAS;
 		}
 		
 		//Inserta una arista entre dirigida del vertice v1 al vertice v2
-		public void insertaArista(int v1, int v2)
+		public void insertaArista(int v1, int v2, int distancia )
 					throws ArrayIndexOutOfBoundsException, UnsupportedOperationException
 		{
 			if(v1 >= MAX_VERTICES || v2 >= MAX_VERTICES){ 
@@ -72,7 +70,7 @@ public class Grafo {
 				throw new UnsupportedOperationException("No se puede añadir más aristas");
 			}		
 			else{
-				grafo[v1][v2] = 1;
+				grafo[v1][v2] = distancia ;
 			}
 		}
 		
