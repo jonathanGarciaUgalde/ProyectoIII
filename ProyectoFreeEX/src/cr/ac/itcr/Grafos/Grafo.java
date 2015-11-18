@@ -21,11 +21,13 @@ public class Grafo {
 	
 		private final int MAX_VERTICES;
 		private final int MAX_ARISTAS;
+	
 		private int nroAristas;
 		private int grafo[][];
 		
 		//Creaewewe un grafo vacío, con un máximo numero de vertices y aristas
-		public Grafo(int nroVertices, int  nroAristas){
+		
+		public Grafo(int nroVertices, int  nroAristas  ){
 			MAX_VERTICES = nroVertices;
 			MAX_ARISTAS = nroAristas;
 			
@@ -33,9 +35,13 @@ public class Grafo {
 			
 			grafo = new int[MAX_VERTICES][MAX_VERTICES];
 			
-			for(int i = 0; i < getMAX_VERTICES();i++){
-				for (int j = 0; j < getMAX_VERTICES(); j++){
-					grafo[i][j] = 0;
+			for(int i = 0; i < getNumberOfVertices();i++){
+				for (int j = 0; j < getNumberOfVertices(); j++){
+					
+					if (i==j){
+						grafo[i][j]=0;
+					}
+					
 				}
 			}
 		}
@@ -58,19 +64,23 @@ public class Grafo {
 			return MAX_ARISTAS;
 		}
 		
-		//Inserta una arista entre dirigida del vertice v1 al vertice v2
-		public void insertaArista(int v1, int v2, int distancia )
+		
+		/*
+		 * este metodo  inserta  la  distancia que haty entre  dos   nodos.
+		 * 
+		 */
+		public void insertaArista(int nodo1, int nodo2, int distancia )
 					throws ArrayIndexOutOfBoundsException, UnsupportedOperationException
 		{
-			if(v1 >= MAX_VERTICES || v2 >= MAX_VERTICES){ 
+			if(nodo1 >= MAX_VERTICES || nodo2 >= MAX_VERTICES){ 
 				throw new ArrayIndexOutOfBoundsException("Vertices inválidos, fuera de rango"+
 						"\nRango de vertices: 0 - " + (getMAX_VERTICES() - 1));
 			}
 			else if(nroAristas == MAX_ARISTAS){
-				throw new UnsupportedOperationException("No se puede añadir más aristas");
+				throw new UnsupportedOperationException("No se puede añadir más aristas porque   no se creo  de fotrma correcta la  matriz");
 			}		
 			else{
-				grafo[v1][v2] = distancia ;
+				grafo[nodo1][nodo2] = distancia ;
 			}
 		}
 		
