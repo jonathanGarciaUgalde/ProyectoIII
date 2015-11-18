@@ -74,7 +74,7 @@ public class Grafo {
 		{
 			if(nodo1 >= MAX_VERTICES || nodo2 >= MAX_VERTICES){ 
 				throw new ArrayIndexOutOfBoundsException("Vertices inválidos, fuera de rango"+
-						"\nRango de vertices: 0 - " + (getMAX_VERTICES() - 1));
+						"\nRango de vertices: 0 - " + (getNumberOfVertices () - 1));
 			}
 			else if(nroAristas == MAX_ARISTAS){
 				throw new UnsupportedOperationException("No se puede añadir más aristas porque   no se creo  de fotrma correcta la  matriz");
