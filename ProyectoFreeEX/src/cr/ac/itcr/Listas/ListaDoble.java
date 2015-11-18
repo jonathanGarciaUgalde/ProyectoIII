@@ -3,7 +3,7 @@ package cr.ac.itcr.Listas;
 import org.json.JSONArray;
 import org.json.JSONException;
 
-import cr.ac.itcr.structures.NodoDoble;
+import cr.ac.itcr.Listas.NodoDoble;
 
 public class ListaDoble {
 	// se  declara  un nodo inicial de la lista  y uno final.
