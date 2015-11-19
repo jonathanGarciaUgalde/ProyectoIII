@@ -1,6 +1,6 @@
 package cr.ac.itcr.Grafos;
 import cr.ac.itcr.Grafos.Grafo;
-import cr.ac.itcr.Grafos.Nodo;
+
 
 public class AlgoritmoPrim {
 	   
