@@ -25,7 +25,7 @@ public class Servidor {
         System.out.print("Inicializando servidor... ");
         try {
             ss = new ServerSocket(8080);
-            System.out.println("\t[OK]");
+            System.out.println("\t[OK]");//
             int idSession = 0;
             while (true) {
                 Socket socket;
