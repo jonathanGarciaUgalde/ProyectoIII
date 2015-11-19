@@ -18,6 +18,7 @@ import java.lang.RuntimeException;
 public class Grafo {
 
 	
+	static int VALOR_PARA_INFINITO=1000000;
 	
 		private final int MAX_VERTICES;
 		private final int MAX_ARISTAS;
@@ -40,6 +41,10 @@ public class Grafo {
 					
 					if (i==j){
 						grafo[i][j]=0;
+					}
+					else{
+						grafo[i][j]=VALOR_PARA_INFINITO;
+						
 					}
 					
 				}
@@ -84,29 +89,33 @@ public class Grafo {
 			}
 		}
 		
-		//Retorna verdadero si existe una arista dirigida entre los vertices v1 y v2
-		public boolean existeArista(int v1, int v2){
+		/*
+		 *  este  metodo  indica ci  exite  un camino entre  dos  nodos */
+		
+		public boolean existeCamino(int v1, int v2){
 			if(v1 >= MAX_VERTICES || v2 >= MAX_VERTICES){ 
 				throw new ArrayIndexOutOfBoundsException("Vertices inválidos, fuera de rango"+
-						"\nRango de vertices: 0 - " + (getMAX_VERTICES() - 1));
+						"\nRango de vertices: 0 - " + (getNumberOfVertices () - 1));
+			
 			}
-			else if(grafo[v1][v2] == 1){
+			else if(grafo[v1][v2] != 0  &&  grafo[v1][v2]!=VALOR_PARA_INFINITO ){
 				return true;
 			}		
 			return false;
 		}
 		
+		
 		//Elimina la arista entre los vertices v1 y v2
-		public void eliminaArista(int v1, int v2){
+		public void eliminaCamino(int v1, int v2){
 			if(v1 >= MAX_VERTICES || v2 >= MAX_VERTICES){ 
 				throw new ArrayIndexOutOfBoundsException("Vertices inválidos, fuera de rango"+
-						"\nRango de vertices: 0 - " + (getMAX_VERTICES() - 1));
+						"\nRango de vertices: 0 - " + (getNumberOfVertices() - 1));
 			}
-			else if(grafo[v1][v2] == 0){
-				System.err.println("La arista NO existe");
+			else if(grafo[v1][v2] == 0 ||grafo[v1][v2]== VALOR_PARA_INFINITO){
+				System.err.println(" entre  estos  nodos  no existe  camino");
 			}
 			else{
-				grafo[v1][v2] = 0;
+				grafo[v1][v2] = VALOR_PARA_INFINITO;
 			}
 		}
 		
@@ -114,7 +123,7 @@ public class Grafo {
 		public void liberaGrafo(){
 			for(int i = 0; i < grafo.length; i++){
 				for(int j = 0; j < grafo[i].length; j++){
-					grafo[i][j] = 0;
+					grafo[i][j] = VALOR_PARA_INFINITO;
 				}
 			}
 		}
