@@ -9,7 +9,7 @@ public class AlgoritmoPrim {
 	    {
 	        int n = g.getNumberOfVertices();
 	        
-	        Entry[] table = new Entry [n];
+	        int [] table = new Entry [n];
 	        for (int v = 0; v < n; ++v)
 	            table [v] = new Entry ();
 	        table [s].distance = 0;
