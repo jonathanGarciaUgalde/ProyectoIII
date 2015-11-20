@@ -43,7 +43,7 @@ public class AlgortimoDijkstra {
 		           final int next = minVertex (dist, visited);
 		           visited[next] = true;
 		  
-		           // The shortest path to next is dist[next] and via pred[next].
+		           // The shortest patggh to next is dist[next] and via pred[next].
 		  
 		           final int [] n = G.neighbors (next);
 		           for (int j=0; j<n.length; j++) {
