@@ -1,5 +1,8 @@
 /**
- * 
+ *   clase  que se va a encargar  de buscar la ruta más corta  de llegada   del mensaje  que se genere con las ubicaciones que cree el servidor 
+ *   
+ *   
+ *   
  */
 package cr.ac.itcr.Grafos;
 import java.io.*;
