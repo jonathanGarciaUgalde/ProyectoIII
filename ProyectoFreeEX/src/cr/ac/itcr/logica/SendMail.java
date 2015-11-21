@@ -20,7 +20,10 @@ public class SendMail {
 	private Session session;
 	
 	
-	
+	/**
+     * Utility method to send simple IMAP email
+     * @return booelan
+     */
 	public boolean send() {
 		
 		try {

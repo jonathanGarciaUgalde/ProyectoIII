@@ -5,6 +5,12 @@ import javax.mail.*;
 
 
 public class ReadingMail {
+	
+	/**
+     * Utility method to read simple IMAP email
+     * @param email
+     * @param password
+     */
 	public void Reader(String email, String password){
         Properties props = new Properties();
         props.setProperty("mail.store.protocol", "imaps");
