@@ -22,7 +22,7 @@ public class ServidorHiloBT {
   
         //Create a UUID for SPP
         UUID uuid = new UUID("1101", true);
-        //Create the servicve url
+        //Create the service url
         String connectionString = "btspp://localhost:" + uuid +";name=Sample SPP Server";
         
         //open server url
