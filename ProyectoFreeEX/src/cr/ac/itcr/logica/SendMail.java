@@ -21,7 +21,7 @@ public class SendMail {
 	
 	
 	/**
-     * Utility method to send simple IMAP email
+     * Utility method to send simple IMAP and SMTP email
      * @return booelan
      */
 	public boolean send() {

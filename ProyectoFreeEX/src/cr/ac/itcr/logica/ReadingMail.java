@@ -7,7 +7,7 @@ import javax.mail.*;
 public class ReadingMail {
 	
 	/**
-     * Utility method to read simple IMAP email
+     * Utility method to read simple IMAP and SMTP email
      * @param email
      * @param password
      */
