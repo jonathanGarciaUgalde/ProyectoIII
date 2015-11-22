@@ -51,6 +51,24 @@ public class Grafo {
 			}
 		}
 		
+		public int  cuentaCaminosTotales(){
+			int contador=0;
+			
+			for(int i = 0; i < getNumberOfVertices();i++){
+				for (int j = 0; j < getNumberOfVertices(); j++){
+			 if (grafo[i][j]!=0 && grafo[i][j]!=VALOR_PARA_INFINITO ){
+				 contador++;
+				 
+			 }
+					
+				}
+				}
+			return  contador;
+			}
+			
+			
+	
+		
 		public Grafo(int nroVertices){
 		
 			
@@ -128,6 +146,9 @@ public class Grafo {
 			}
 		}
 		
+		 public  int infinito(){
+			 return VALOR_PARA_INFINITO;
+		 }
 		public void mostrarGrafo(){
 			System.out.print(" ");
 			for(int i = 0; i < MAX_VERTICES; i++)
@@ -143,5 +164,23 @@ public class Grafo {
 				System.out.println();
 			}
 		}
-	
+		
+		public boolean hayCaminos(){
+			boolean res= true;
+			for(int i = 0; i < grafo.length; i++){
+				for(int j = 0; j < grafo[i].length; j++){
+					if (grafo[i][j]==0 ||grafo[i][j]==VALOR_PARA_INFINITO ){
+						res=false;
+						
+					}
+				 }
+				}
+			return res;
+			
+		}
+ public  int [][]GrafoCreado(){
+	 return grafo;
+	 
+ }
 }
+

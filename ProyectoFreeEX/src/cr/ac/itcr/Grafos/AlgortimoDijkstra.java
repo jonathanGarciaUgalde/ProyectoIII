@@ -6,13 +6,20 @@
  */
 package cr.ac.itcr.Grafos;
 import java.io.*;
-
+import cr.ac.itcr.Grafos.*;
 import java.util.*;
+
 /**
  * @author Jonathan Garcia
  *
  */
 public class AlgortimoDijkstra {
+
+ 
+	 
+
+	 
+
 
 	/**
 	 * 
@@ -29,14 +36,16 @@ public class AlgortimoDijkstra {
 		
 	 */
 		   
-		      public static int [] dijkstra (WeightedGraph G, int s) {
-		         final int [] dist = new int [G.size()];  // shortest known distance from "s"
-		         final int [] pred = new int [G.size()];  // preceeding node in path
-		         final boolean [] visited = new boolean [G.size()]; // all false initially
+		      public static int [] dijkstra (Grafo g, int s) {
+		         final int [] dist = new int [g.getNumberOfVertices()];  // recibe las distancias  mas cortas del algoritmo prim 
+		         final int [] pred = new int [g.getNumberOfVertices()];  // preceeding node in path
+		         final boolean [] visited = new boolean [g.getNumberOfVertices()]; // all false initially
 		   
 		       for (int i=0; i<dist.length; i++) {
-		           dist[i] = Integer.MAX_VALUE;
+		           dist[i] =  1;
+		           
 		        }
+		       
 		        dist[s] = 0;
 		 
 		       for (int i=0; i<dist.length; i++) {
@@ -45,10 +54,11 @@ public class AlgortimoDijkstra {
 		  
 		           // The shortest patggh to next is dist[next] and via pred[next].
 		  
-		           final int [] n = G.neighbors (next);
+		           final int [] n = new int [g.cuentaCaminosTotales()];
+		           
 		           for (int j=0; j<n.length; j++) {
 		              final int v = n[j];
-		              final int d = dist[next] + G.getWeight(next,v);
+		              final int d = dist[next] ;
 		              if (dist[v] > d) {
 		                 dist[v] = d;
 		                 pred[v] = next;
@@ -67,14 +77,14 @@ public class AlgortimoDijkstra {
 		        return y;
 		     }
 		  
-		     public static void printPath (WeightedGraph G, int [] pred, int s, int e) {
+		     public static void printPath (Grafo g, int [] pred, int s, int e) {
 		        final java.util.ArrayList path = new java.util.ArrayList();
 		        int x = e;
 		        while (x!=s) {
-		           path.add (0, G.getLabel(x));
+		           path.add (0, g.getNumberOfAristas());
 		           x = pred[x];
 		        }
-		        path.add (0, G.getLabel(s));
+		        path.add (0, g.getNumberOfAristas());
 		        System.out.println (path);
 		     }
 		  
